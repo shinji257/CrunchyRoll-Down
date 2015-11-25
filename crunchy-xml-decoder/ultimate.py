@@ -159,8 +159,9 @@ if '<code>4</code>' in xmlconfig: #this is in VideoEncode_GetStreamInfo, but bet
 vid_id = xmlconfig.find('media_id').string
 
 #----------
+
 title = unicode((re.findall('<title>(Crunchyroll.+?)</title>',html).pop().replace('Crunchyroll - Watch ','')),encoding='utf-8')
-title = unidecode(title).replace('/',' - ').replace(':','-').replace('?','.').replace('"','\'').replace("*", " ").replace("|","-").strip()
+title = unidecode(title).replace('/',' - ').replace(':','-').replace('?','.').replace('"','\'').replace("*", " ").replace("|","-").replace("&amp;","&").replace("&","and").strip()
 
 #----------
 
